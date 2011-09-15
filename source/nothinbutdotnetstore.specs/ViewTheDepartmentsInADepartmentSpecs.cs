@@ -35,9 +35,8 @@ namespace nothinbutdotnetstore.specs
                 sut.process(request);
 
             It should_display_a_departments = () =>
-                display_engine.received(x => x.display(dept));
+                display_engine.received(x => x.display(all_sub_departments));
 
-            static Department dept;
             static IContainRequestInformation request;
             static ICanGetDepartments department_repository;
             static IEnumerable<Department> all_sub_departments;
