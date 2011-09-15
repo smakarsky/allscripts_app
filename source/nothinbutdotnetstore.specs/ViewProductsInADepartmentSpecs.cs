@@ -35,8 +35,8 @@ namespace nothinbutdotnetstore.specs
             Because b = () =>
                sut.process(request);
 
-            It should_display_a_departments = () =>
-                display_engine.received(x => x.display(dept));
+            It should_display_products_in_a_department = () =>
+                display_engine.received(x => x.display(all_products_in_a_department));
 
              static Department dept;
             static IContainRequestInformation request;
