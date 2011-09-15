@@ -2,5 +2,6 @@
 {
     public interface IContainRequestInformation
     {
+        InputModel map<InputModel>();
     }
 }
