@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using nothinbutdotnetstore.web.application;
 
 namespace nothinbutdotnetstore.web.application
 {
@@ -8,3 +9,5 @@ namespace nothinbutdotnetstore.web.application
          IEnumerable<Department> get_the_departments_in(Department parent_department);
     }
 }
+
+
