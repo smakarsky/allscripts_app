@@ -19,11 +19,8 @@ namespace nothinbutdotnetstore.specs
         {
             Establish c = () =>
             {
-                departments = Enumerable.Range(1, 50).Select(x => fake.an<Department>()).ToList();
-                department_finder = depends.on<ICanGetDepartments>();
+                department_repository = depends.on<ICanGetDepartments>();
                 request = fake.an<IContainRequestInformation>();
-                department_finder.setup(x => x.get_all_department()).Return(departments);
-
             };
 
             Because b = () =>
@@ -31,15 +28,11 @@ namespace nothinbutdotnetstore.specs
 
 
             It should_get_a_list_of_the_main_departments_in_the_store = () =>
-            {
-                department_finder.received(x => x.get_all_department());
-                request.results.Count().ShouldEqual(departments.Count);
-            };
-                
+                department_repository.received(x => x.get_the_main_departments_in_the_store());
+
 
             static IContainRequestInformation request;
-            static ICanGetDepartments department_finder;
-            static System.Collections.Generic.List<Department> departments;
+            static ICanGetDepartments department_repository;
         }
     }
 }
