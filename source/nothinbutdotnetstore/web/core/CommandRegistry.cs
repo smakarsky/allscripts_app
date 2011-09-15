@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using nothinbutdotnetstore.web.core.stubs;
 
 namespace nothinbutdotnetstore.web.core
 {
@@ -7,6 +8,11 @@ namespace nothinbutdotnetstore.web.core
     {
         IEnumerable<IProcessARequest> all_commands;
         IProcessARequest the_special_case;
+
+        public CommandRegistry():this(new StubSetOfCommands(),
+            new StubMissingCommand())
+        {
+        }
 
         public CommandRegistry(IEnumerable<IProcessARequest> all_commands, IProcessARequest the_special_case)
         {
