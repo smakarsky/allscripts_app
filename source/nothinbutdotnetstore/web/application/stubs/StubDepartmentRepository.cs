@@ -10,5 +10,15 @@ namespace nothinbutdotnetstore.web.application.stubs
             return Enumerable.Range(1, 199).Select(x => new Department{name = x.ToString("Department 0")});
 
         }
+
+        #region ICanGetDepartments Members
+
+
+        public Department get_a_department_in_the_store(int deptID)
+        {
+          return new Department();
+        }
+
+        #endregion
     }
 }

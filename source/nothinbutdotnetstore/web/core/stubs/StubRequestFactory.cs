@@ -11,6 +11,16 @@ namespace nothinbutdotnetstore.web.core.stubs
 
         class StubRequest : IContainRequestInformation
         {
+          #region IContainRequestInformation Members
+
+          public string Parameters
+          {
+            get
+              ;
+            set;
+          }
+
+          #endregion
         }
     }
 }

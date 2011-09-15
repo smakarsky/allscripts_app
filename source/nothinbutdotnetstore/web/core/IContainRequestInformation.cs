@@ -2,5 +2,6 @@
 {
     public interface IContainRequestInformation
     {
+      string Parameters { get; set; }
     }
 }
